@@ -1,6 +1,4 @@
-package com.example.negocio.veiculo;
-
-import jakarta.persistence.Column;
+package com.example.negocio.dtos;
 
 public record VeiculoRequestDTO(
          int ano,

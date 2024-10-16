@@ -1,4 +1,4 @@
-package com.example.negocio.veiculo;
+package com.example.negocio.domain;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -29,14 +29,8 @@ public class Veiculo {
     @Column(name = "cor_veiculo")
     private String cor;
 
-    public Veiculo(VeiculoRequestDTO data){
-        this.ano = data.ano();
-        this.modelo = data.modelo();
-        this.marca = data.marca();
-        this.cor = data.cor();
-    }
-
-//    @OneToOne(mappedBy = "veiculo", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-//    private Loja loja;
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "id_loja")
+    private Loja loja;
 
 }

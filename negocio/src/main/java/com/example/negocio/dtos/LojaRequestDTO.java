@@ -1,4 +1,4 @@
-package com.example.negocio.loja;
+package com.example.negocio.dtos;
 
 public record LojaRequestDTO(String nome) {
 }
